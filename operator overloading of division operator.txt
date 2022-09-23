@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+class division{
+private:
+
+
+public:
+	int i,j;
+   division(int i = 0,int j=0)
+	{
+		this->i = i;
+		this->j = j;
+	}
+   division operator/(division &obj2)
+	{
+	  division temp;
+	  temp.i=i/obj2.i;
+	  temp.j=j/obj2.j;
+	  return temp;
+	   
+	  }
+
+	void display()
+	{
+		cout << "i = " << i << endl;
+		cout<<"j = "<< j <<endl;
+	}
+};
+int main()
+{
+	division obj1(8,15);
+	division obj2(2,3);
+	division  obj3=obj1/obj2;
+	obj3.display();
+}
