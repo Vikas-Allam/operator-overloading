@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+class mul{
+private:
+
+
+public:
+	int i,j;
+   mul(int i = 0,int j=0)
+	{
+		this->i = i;
+		this->j = j;
+	}
+	mul operator*(mul &obj2)
+	{
+	  mul temp;
+	  temp.i=i*obj2.i;
+	  temp.j=j*obj2.j;
+	  return temp;
+	   
+	  }
+
+	void display()
+	{
+		cout << "i = " << i << endl;
+		cout<<"j = "<< j <<endl;
+	}
+};
+int main()
+{
+	mul obj1(7,5);
+	mul obj2(3,2);
+	mul obj3=obj1*obj2;
+	obj3.display();
+}
