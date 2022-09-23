@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+class increment {
+private:
+	int i;
+
+public:
+	increment(int i = 0)
+	{
+		this->i = i;
+	}
+	increment operator--()
+	{
+	     increment temp;
+	   temp.i= --i;
+	    return temp;
+	}
+	increment operator--(int)
+	{
+	     increment temp;
+	   temp.i= i--;
+	    return temp;
+	}
+
+	void display()
+	{
+		cout << "i = " << i << endl;
+	}
+};
+int main()
+{
+	increment obj1(3);
+
+	cout << "Before decrement: ";
+	obj1.display();
+	increment obj2 =--obj1;
+
+	cout << "After pre decrement: ";
+	obj2.display();
+	increment obj3=obj1--;
+   cout<<"After Post decrement:";
+      obj3.display();
+}
