@@ -1,0 +1,33 @@
+
+#include <iostream>
+
+using namespace std;
+class A
+{
+         int a;
+    public:
+     A(int a)
+     {
+          this->a=a;
+     }
+     A operator<<(int n)
+     {
+        this->a=a<<n;
+        return *this;
+     }
+     void print()
+     {
+         cout<<(float)(a)<<endl;
+     }
+};
+int main()
+{
+    int a;
+    cin>>a;
+    A obj(a);
+    int n;
+    cin>>n;
+    obj.print();
+        obj<<n;
+      obj.print();
+}
